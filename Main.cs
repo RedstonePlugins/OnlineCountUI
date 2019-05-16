@@ -10,7 +10,7 @@ using System.Text;
 using UnityEngine;
 using Logger = Rocket.Core.Logging.Logger;
 
-namespace OnlineCountUI
+namespace educatalan02.OnlineCountUI
 {
     public class Main : RocketPlugin<CountConfig>
     {

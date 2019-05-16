@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace OnlineCountUI
+namespace educatalan02.OnlineCountUI
 {
     public class CountConfig : IRocketPluginConfiguration
     {
