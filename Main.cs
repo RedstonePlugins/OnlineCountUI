@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
 using Logger = Rocket.Core.Logging.Logger;
 
 namespace OnlineCountUI
@@ -16,9 +17,8 @@ namespace OnlineCountUI
         public string Discord = "discord.gg/Q89FmUk";
         protected override void Load()
         {
-
             Logger.Log("[OnlineCountUI] Plugin loaded correctly");
-            Console.WriteLine("Made by Redstoneplugins - Support: " + Discord);
+            Console.WriteLine("Made by Redstoneplugins - Support: " + Discord, Color.yellow);
 
             U.Events.OnPlayerConnected += Conectado;
             U.Events.OnPlayerDisconnected += Desconectado;
