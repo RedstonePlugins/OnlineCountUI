@@ -10,9 +10,11 @@ namespace educatalan02.OnlineCountUI
     {
 
         public ushort EffectId = 15000;
+        public int updateInterval = 5;
         public void LoadDefaults()
         {
             EffectId = 15000;
+            updateInterval = 5;
         }
     }
 }

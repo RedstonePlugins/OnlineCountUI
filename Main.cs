@@ -14,11 +14,18 @@ namespace educatalan02.OnlineCountUI
 {
     public class Main : RocketPlugin<CountConfig>
     {
+        private static DateTime lastUpdated;
         public string Discord = "discord.gg/Q89FmUk";
         protected override void Load()
         {
             Logger.Log("[OnlineCountUI] Plugin loaded correctly");
             Console.WriteLine("Made by Redstoneplugins - Support: " + Discord, Color.yellow);
+
+
+
+
+            lastUpdated = DateTime.Now;
+
 
             U.Events.OnPlayerConnected += Conectado;
             U.Events.OnPlayerDisconnected += Desconectado;
@@ -33,6 +40,17 @@ namespace educatalan02.OnlineCountUI
         private void Conectado(UnturnedPlayer player)
         {
             EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true , Provider.clients.Count() + " / " + Provider.maxPlayers.ToString());
+        }
+
+
+        private void FixedUpdate()
+        {
+
+            if ((DateTime.Now - lastUpdated).Seconds > Configuration.Instance.updateInterval)
+                for (int i = 0; i < Provider.clients.Count; i++)
+                {
+                    EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true, Provider.clients.Count() + " / " + Provider.maxPlayers.ToString());
+                }
         }
 
         protected override void Unload()
