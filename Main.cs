@@ -32,7 +32,7 @@ namespace educatalan02.OnlineCountUI
 
         private void Conectado(UnturnedPlayer player)
         {
-            EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true , Provider.clients.Count() + " / " + Provider.maxPlayers);
+            EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true , Provider.clients.Count() + " / " + Provider.maxPlayers.ToString());
         }
 
         protected override void Unload()
