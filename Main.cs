@@ -33,7 +33,9 @@ namespace educatalan02.OnlineCountUI
 
         private void Desconectado(UnturnedPlayer player)
         {
-            
+
+
+            EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true, Provider.clients.Count() - 1 + " / " + Provider.maxPlayers.ToString());
             EffectManager.askEffectClearByID(Configuration.Instance.EffectId, player.CSteamID);
         }
 
@@ -43,15 +45,7 @@ namespace educatalan02.OnlineCountUI
         }
 
 
-        private void FixedUpdate()
-        {
-
-            if ((DateTime.Now - lastUpdated).Seconds > Configuration.Instance.updateInterval)
-                for (int i = 0; i < Provider.clients.Count; i++)
-                {
-                    EffectManager.sendUIEffect(Configuration.Instance.EffectId, 15, true, Provider.clients.Count() + " / " + Provider.maxPlayers.ToString());
-                }
-        }
+       
 
         protected override void Unload()
         {
