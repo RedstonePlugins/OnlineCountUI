@@ -1,2 +1,2 @@
-# OnlineCountUI
+# OnlineCountUI [DISCONTINUED]
 Players count via UI
